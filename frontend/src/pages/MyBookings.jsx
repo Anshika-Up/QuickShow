@@ -5,13 +5,17 @@ import BlurCircle from '../components/BlurCircle';
 import timeFormat from '../lib/timeFormat';
 import isoTimeFormat from '../lib/isoTimeFormat';
 import { dateFormat } from '../lib/dateFirmat';
+<<<<<<< HEAD
 import { useAppContext } from '../context/AppContext';
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
 const MyBookings = () => {
   const currency= import.meta.env.VITE_CURRENCY
   const [bookings, setBookings]=useState([]);
   const [isloading, setIsloading]=useState(true);
 
+<<<<<<< HEAD
   const {axios,getToken, user,image_base_url}=useAppContext()
 
   const getBookingdata= async()=>{
@@ -25,14 +29,23 @@ const MyBookings = () => {
     } catch (error) {
       console.log(error)
     }
+=======
+  const getBookingdata= async()=>{
+    setBookings(dummyBookingData);
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
     setIsloading(false);
   }
 
   useEffect(()=>{
+<<<<<<< HEAD
     if(user){
       getBookingdata();
     }
   },[user])
+=======
+    getBookingdata();
+  },[])
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
   return !isloading ? (
     <div className='relative px-6 md:px-16 lg:px-40 pt-30 md:pt-40 min-h-[80vh]'>
@@ -45,7 +58,11 @@ const MyBookings = () => {
       {bookings.map((item,index)=>(
         <div key={index} className='flex flex-col md:flex-row justify-between bg-primary/8 border border-primary/20 rounded-lg mt-4 p-2 max-w-3xl'>
           <div className='flex flex-col md:flex-row'>
+<<<<<<< HEAD
             <img src={image_base_url + item.show.movie.poster_path} alt="" className='md:max-w-45 aspect-video h-auto object-cover object-bottom rounded'/>
+=======
+            <img src={item.show.movie.poster_path} alt="" className='md:max-w-45 aspect-video h-auto object-cover object-bottom rounded'/>
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
             <div className='flex flex-col p-4'>
               <p className='text-lg font-semibold'>{item.show.movie.title} </p>

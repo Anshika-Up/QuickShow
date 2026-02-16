@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from 'react'
 import AdminNavbar from '../../components/admin/AdminNavbar'
 import AdminSidebar from '../../components/admin/AdminSidebar'
@@ -14,6 +15,15 @@ const Layout = () => {
   },[])
 
   return isAdmin ?(
+=======
+import React from 'react'
+import AdminNavbar from '../../components/admin/AdminNavbar'
+import AdminSidebar from '../../components/admin/AdminSidebar'
+import { Outlet } from 'react-router-dom'
+
+const Layout = () => {
+  return (
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
     <>
     <AdminNavbar/>
     <div className='flex'>
@@ -23,7 +33,11 @@ const Layout = () => {
       </div>
     </div>
     </>
+<<<<<<< HEAD
   ): <Loading/>
+=======
+  )
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 }
 
 export default Layout

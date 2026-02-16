@@ -6,7 +6,10 @@ import { ArrowRightIcon, ClockIcon } from 'lucide-react'
 import isoTimeFormat from '../lib/isoTimeFormat'
 import BlurCircle from '../components/BlurCircle'
 import toast from 'react-hot-toast'
+<<<<<<< HEAD
 import { useAppContext } from '../context/AppContext'
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
 const SeatLayouts = () => {
   const groupRows = [['A', 'B'], ['C', 'D'], ['E', 'F'], ['G', 'H'], ['I', 'J']]
@@ -14,6 +17,7 @@ const SeatLayouts = () => {
   const [selectedSeats, setSelectedSeats] = useState([])
   const [selectedTime, setSelectedTime] = useState(null)
   const [show, setShow] = useState(null)
+<<<<<<< HEAD
   const [occupiedSeats, setOccupiedSeats]=useState([])
 
   const navigate=useNavigate()
@@ -32,6 +36,24 @@ const SeatLayouts = () => {
     }
   }
 
+=======
+
+  const navigate=useNavigate()
+
+  const getShow = async () => {
+    const show = dummyShowsData.find(show => show._id === id)
+    if (show) {
+      setShow({
+        movie: show,
+        dateTime: dummyDateTimeData
+      })
+    }
+  }
+
+  useEffect(() => {
+    getShow();
+  }, [])
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
   const handleSeatClick = (seatId) => {
     if (!selectedTime) {
@@ -40,10 +62,13 @@ const SeatLayouts = () => {
 
     if (!selectedSeats.includes(seatId) && selectedSeats.length > 4) return toast("you can not select more than 5 seats")
 
+<<<<<<< HEAD
       if(occupiedSeats.includes(seatId)){
         return toast("This seat is already booked")
       }
 
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
     setSelectedSeats(prev => prev.includes(seatId) ? prev.filter(seat => seat !== seatId) : [...prev, seatId])
   }
 
@@ -53,9 +78,13 @@ const SeatLayouts = () => {
         {Array.from({ length: count }, (_, i) => {
           const seatId = `${row}${i + 1}`;
           return (
+<<<<<<< HEAD
             <button key={seatId} onClick={() => handleSeatClick(seatId)} className={`h-8 w-8 rounded border border-primary/60 cursor-pointer
              ${selectedSeats.includes(seatId) && "bg-primary text-white"}
              ${occupiedSeats.includes(seatId) && "opacity-50"} `}>
+=======
+            <button key={seatId} onClick={() => handleSeatClick(seatId)} className={`h-8 w-8 rounded border border-primary/60 cursor-pointer ${selectedSeats.includes(seatId) && "bg-primary text-white"}`}>
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
               {seatId}
             </button>
           )
@@ -65,6 +94,7 @@ const SeatLayouts = () => {
     </div>
   )
 
+<<<<<<< HEAD
   // fn to get all occupied seats for this time
   const getOccupiedSeats = async()=>{
     try {
@@ -113,6 +143,8 @@ const SeatLayouts = () => {
     }
   },[selectedTime])
 
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   return show ? (
     <div className='flex flex-col md:flex-row px-6 md:px-16 lg:px-40 py-30 md:pt-50'>
       {/* Available Timings */}
@@ -149,7 +181,11 @@ const SeatLayouts = () => {
 
           </div>
         </div>
+<<<<<<< HEAD
             <button onClick={bookTickets} className='cursor-pointer flex items-center gap-1 mt-20 px-10 bg-primary hover:bg-primary-dull transition py-3 text-sm rounded-full font-medium active:scale-95'>
+=======
+            <button onClick={()=>{navigate('/my-bookings'); scrollTo(0,0)}} className='cursor-pointer flex items-center gap-1 mt-20 px-10 bg-primary hover:bg-primary-dull transition py-3 text-sm rounded-full font-medium active:scale-95'>
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
               Proceed to Checkout
               <ArrowRightIcon className='w-5 h-5 hover:translate-x-1 transition' strokeWidth={3}/>
             </button>

@@ -14,16 +14,22 @@ import Dashboard from './pages/admin/Dashboard'
 import AddShows from './pages/admin/AddShows'
 import ListShows from './pages/admin/ListShows'
 import ListBookings from './pages/admin/ListBookings'
+<<<<<<< HEAD
 import { useAppContext } from './context/AppContext'
 import { SignIn } from '@clerk/clerk-react'
 import Loading from './components/Loading'
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
 const App = () => {
 
   const isAdminRoute=useLocation().pathname.startsWith('/admin');
 
+<<<<<<< HEAD
   const {user}=useAppContext()
 
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   return (
     <>
     <Toaster/>
@@ -35,6 +41,7 @@ const App = () => {
     <Route path="/movies/:id" element={<MovieDetails/>} />
     <Route path="/movies/:id/:date" element={<SeatLayouts/>} />  
     <Route path="/my-bookings" element={<MyBookings/>} />
+<<<<<<< HEAD
     <Route path="/loading/:nextUrl" element={<Loading/>} />
     <Route path="/favorite" element={<Favorite/>} />
 
@@ -44,6 +51,11 @@ const App = () => {
         <SignIn fallbackRedirectUrl={'/admin'}/>
       </div>
     )} >
+=======
+    <Route path="/favorite" element={<Favorite/>} />
+    {/* admin pages routes */}
+    <Route path='/admin/*' element={<Layout/>} >
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
     <Route index element={<Dashboard/>} />
     <Route path='add-shows' element={<AddShows/>} />
     <Route path='list-shows' element={<ListShows/>} />

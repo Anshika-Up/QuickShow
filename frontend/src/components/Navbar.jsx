@@ -3,12 +3,18 @@ import { assets } from '../assets/assets'
 import { MenuIcon, SearchIcon, TicketPlus, XIcon} from 'lucide-react'
 import { Link, useNavigate } from "react-router-dom"
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
+<<<<<<< HEAD
 import { useAppContext } from '../context/AppContext'
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
 
 const Navbar = () => {
 
+<<<<<<< HEAD
   const {favoriteMovies}=useAppContext()
+=======
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   const [isOpen, setIsOpen]= useState(false);
   const {user} =useUser();
   const {openSignIn}=useClerk();
@@ -29,7 +35,11 @@ const Navbar = () => {
         <Link onClick={()=> {scrollTo(0,0) ; setIsOpen(false)}} to='/movies'>Movies</Link>
         <Link onClick={()=> {scrollTo(0,0) ; setIsOpen(false)}} to='/'>Theaters</Link>
         <Link onClick={()=> {scrollTo(0,0); setIsOpen(false)}} to='/'>Releases</Link>
+<<<<<<< HEAD
         {favoriteMovies.length >0 && <Link onClick={()=> {scrollTo(0,0) ; setIsOpen(false)}} to='/favorite'>Favorites</Link> }
+=======
+        <Link onClick={()=> {scrollTo(0,0) ; setIsOpen(false)}} to='/favorite'>Favorites</Link>
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
       </div>
 
       <div className='flex items-center gap-8 onClick={()=> {scrollTo(0,0) , setIsOpen(false)}}-8'>

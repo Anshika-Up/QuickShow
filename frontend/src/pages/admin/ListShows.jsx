@@ -3,22 +3,41 @@ import Title from '../../components/admin/Title'
 import { dummyShowsData } from '../../assets/assets';
 import Loading from '../../components/Loading';
 import { dateFormat } from '../../lib/dateFirmat';
+<<<<<<< HEAD
 import { useAppContext } from '../../context/AppContext';
 
 const ListShows = () => {
 
   const {axios, user, getToken}=useAppContext();
 
+=======
+
+const ListShows = () => {
+
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   const currency= import.meta.env.VITE_CURRENCY
   const [shows, setShows]=useState([]);
   const [loading, setLoading]=useState(true);
 
   const getAllShows = async ()=>{
     try{
+<<<<<<< HEAD
 
       const {data}= await axios.get('/api/admin/all-shows',{headers:{Authorization: `Bearer ${await getToken()}`}})
 
       setShows( data.shows);
+=======
+      setShows([{
+        movie: dummyShowsData[0],
+        showDateTime: "2025-06-30T02:30:00.000Z",
+        showPrice: 59,
+        occupiedSeats: {
+          A1:"user_1",
+          B1:"user_2",
+          C1:"user_3"
+        }
+      }]);
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
       setLoading(false)
     }catch(error) {
       console.log(error)
@@ -26,11 +45,16 @@ const ListShows = () => {
   }
 
   useEffect(()=>{
+<<<<<<< HEAD
     if(user){
 
       getAllShows();
     }
   },[user]);
+=======
+    getAllShows();
+  },[]);
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
   return !loading ? (
     <>

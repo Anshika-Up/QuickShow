@@ -6,7 +6,11 @@ const Footer = () => {
             <footer className="px-6 mt-40 md:px-16 lg:px-36 w-full text-gray-300">
             <div className="flex flex-col md:flex-row justify-between w-full gap-10 border-b border-gray-500 pb-14">
                 <div className="md:max-w-96">
+<<<<<<< HEAD
                     <img alt="" className="h-11" src={assets.logo} />
+=======
+                    <img alt="" class="h-11" src={assets.logo} />
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
                     <p className="mt-6 text-sm">
                         Book your favorite movies in seconds and enjoy a seamless cinema experience from screen to seat. From the latest blockbusters to timeless classics, we make every movie night effortless, exciting, and unforgettable.
                     </p>

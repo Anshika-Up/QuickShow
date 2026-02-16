@@ -4,6 +4,7 @@ import Loading from '../../components/Loading';
 import Title from '../../components/admin/Title';
 import { CheckIcon, DeleteIcon, StarIcon } from 'lucide-react';
 import kConverter from '../../lib/kConverter';
+<<<<<<< HEAD
 import { useAppContext } from '../../context/AppContext';
 import toast from 'react-hot-toast';
 
@@ -11,6 +12,10 @@ const AddShows = () => {
 
   const {axios, getToken, user, image_base_url}=useAppContext()
 
+=======
+
+const AddShows = () => {
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   const currency = import.meta.env.VITE_CURRENCY
   const [nowPlayingMovies, setNowPlayingMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
@@ -18,6 +23,7 @@ const AddShows = () => {
   const [dateTimeInput, setDateTimeInput] = useState('')
   const [showPrice, setShowPrice] = useState("")
 
+<<<<<<< HEAD
   const [addingShow, setAddingShow] = useState(false)
 
   const fetchNowPlayingMovies = async () => {
@@ -73,6 +79,15 @@ const AddShows = () => {
       fetchNowPlayingMovies();
     }
   }, [user]);
+=======
+  const fetchNowPlayingMovies = async () => {
+    setNowPlayingMovies(dummyShowsData)
+  };
+
+  useEffect(() => {
+    fetchNowPlayingMovies();
+  }, []);
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
 
   const handleDateTimeAdd= ()=> {
       if(!dateTimeInput) return;
@@ -113,7 +128,11 @@ const AddShows = () => {
 
               <div className='relative rounded-lg overflow-hidden'>
 
+<<<<<<< HEAD
                 <img src={image_base_url + movie.poster_path} alt="" className='w-full object-cover brightness-90' />
+=======
+                <img src={movie.poster_path} alt="" className='w-full object-cover brightness-90' />
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
                 <div className='absolute bottom-0 left-0 bg-black/70 flex items-center justify-between p-2 w-full text-sm'>
                   <p className='flex items-center gap-1 text-gray-400'>
                     <StarIcon className='w-4 h-4 text-primary fill-primary ' />
@@ -177,7 +196,11 @@ const AddShows = () => {
           </div>
         )}
 
+<<<<<<< HEAD
         <button onClick={handleSubmit} disabled={addingShow} className='bg-primary text-white px-8 py-2 mt-6 rounded hover:bg-primary/90 transition-all cursor-pointer'>
+=======
+        <button className='bg-primary text-white px-8 py-2 mt-6 rounded hover:bg-primary/90 transition-all cursor-pointer'>
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
           Add Show
         </button>
     </>

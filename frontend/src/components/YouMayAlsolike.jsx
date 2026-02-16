@@ -2,6 +2,7 @@ import { ArrowRight } from 'lucide-react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import BlurCircle from './BlurCircle';
+<<<<<<< HEAD
 import MovieCard from './MovieCard';
 import { useAppContext } from '../context/AppContext';
 
@@ -9,6 +10,13 @@ const YouMayAlsoLike = () => {
 
   const {shows}=useAppContext()
 
+=======
+import { dummyShowsData } from '../assets/assets';
+import MovieCard from './MovieCard';
+
+const YouMayAlsoLike = () => {
+
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
   const navigate=useNavigate();
   return (
     <div>
@@ -18,7 +26,11 @@ const YouMayAlsoLike = () => {
        
       </div>
       <div className='flex flex-wrap max-sm:justify-center gap-8 mt-8'>
+<<<<<<< HEAD
         {shows.slice(0,4).map((show)=>(
+=======
+        {dummyShowsData.slice(0,4).map((show)=>(
+>>>>>>> 15deb85855f6bd6d6b0556a28c71976c2e380cf5
           <MovieCard key={show._id} movie={show} />
         ))}
       </div>
